@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self Test</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-1 bg-light text-white vh-100">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#"><img class='img-menu' src="images/house-solid.svg" alt="Home"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="maintenance.html"><img class='img-menu'src="images/screwdriver-wrench-solid.svg" alt="Maintenance"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="new.html"><img class='img-menu'src="images/screwdriver-wrench-solid.svg" alt="Maintenance"></a>
+                    </li>
+                </ul>
+            </nav>
+            <main class="col-11">
+                <div class="content">
+                    <h1> Main Content Area</h1>
+                    <p>Actions / results table.</p>
+                    
+                    <table class="table table-bordered" id="mainTable">
+                        <thead>
+                            <tr>
+                                <th>Actions</th>
+                                <th>Instructions</th>
+                                <th>Observation</th>
+                                <th>Sample</th>
+                                <th>Self-Test</th>
+                                <th class="operation-column">Operation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Action 1</td>
+                                <td>Instruction 1</td>
+                                <td>Observation 1</td>
+                                <td></td>
+                                <td><button class="btn btn-link p-0 self-test-btn" data-sample="false">+</button></td>
+                                <td class="operation-cell"></td>
+                            </tr>
+                            <tr>
+                                <td>Action 2</td>
+                                <td>Instruction 2</td>
+                                <td>Observation 2</td>
+                                <td>Sample 2</td>
+                                <td><button class="btn btn-link p-0 self-test-btn" data-sample="true">+</button></td>
+                                <td class="operation-cell"></td>
+                            </tr>
+                            <tr>
+                                <td>Action 3</td>
+                                <td>Instruction 3</td>
+                                <td>Observation 3</td>
+                                <td></td>
+                                <td><button class="btn btn-link p-0 self-test-btn" data-sample="false">+</button></td>
+                                <td class="operation-cell"></td>
+                            </tr>
+                            <tr>
+                                <td>Action 4</td>
+                                <td>Instruction 4</td>
+                                <td>Observation 4</td>
+                                <td>Sample 4</td>
+                                <td><button class="btn btn-link p-0 self-test-btn" data-sample="true">+</button></td>
+                                <td class="operation-cell"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Sample Modal -->
+    <div class="modal fade" id="sampleModal" tabindex="-1" aria-labelledby="sampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sampleModalLabel">Sample Required</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Please Create a Sample
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Self Test Modal -->
+    <div class="modal fade" id="selfTestModal" tabindex="-1" aria-labelledby="selfTestModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="selfTestModalLabel">Select Self Test and Material</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="selectSelfTest">Select Self Test</label>
+                            <select class="form-control" id="selectSelfTest" multiple>
+                                <!-- Options will be populated by JavaScript -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="selectMaterial">Select Material</label>
+                            <select class="form-control" id="selectMaterial">
+                                <option>My Material</option>
+                                <option>My Material 2</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="saveSelfTestChangesButton">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

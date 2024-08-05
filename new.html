@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self Test</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="new.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Single Self-Test</h2>
+        <div class="row" id="formContainer">
+            <div class="col-md-6">
+                <div class="form-container card p-3 mb-4">
+                    <h4>Main Test</h4>
+                    <form id="selfTestForm">
+                        <div class="form-group">
+                            <label for="testName">Test Name</label>
+                            <input type="text" id="testName" name="testName" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="selfTestType">Self Test Type</label>
+                            <select id="selfTestType" name="selfTestType" class="form-control">
+                                <option value="Formulation">Formulation</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="defaultFieldType">Default Field Type</label>
+                            <select id="defaultFieldType" name="defaultFieldType" class="form-control" onchange="handleFieldTypeChange(this)">
+                                <option value="Numeric">Numeric</option>
+                                <option value="Text">Text</option>
+                                <option value="Dropdown">Dropdown</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="uomType">UOM Type</label>
+                            <select id="uomType" name="uomType" class="form-control">
+                                <option value="Percent">Percent</option>
+                                <option value="Weight">Weight</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="defaultUom">Default UOM</label>
+                            <select id="defaultUom" name="defaultUom" class="form-control">
+                                <option value="%">%</option>
+                                <option value="gr">gr</option>
+                                <option value="Kg">Kg</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                        </div>
+                        <div class="form-buttons">
+                            <button type="button" id="addButton" class="btn btn-primary">+</button>
+                            <button type="submit" class="btn btn-success">Save</button>
+                            <button type="button" class="btn btn-danger">Cancel</button>
+                        </div>
+                    </form>
+                    <div class="dropdown-table-container" style="display: none; margin-top: 20px;">
+                        <div class="form-buttons" style="margin-top: 20px;">
+                            <button type="button" class="btn btn-secondary btn-add-row" onclick="addRow(this)">Add</button>
+                            <button type="button" class="btn btn-secondary btn-remove-row" onclick="removeRow(this)">Remove</button>
+                        </div>
+                        <table class="table table-bordered mt-3">
+                            <thead>
+                                <tr>
+                                    <th>Options</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="text" class="form-control"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-3">
+            <a href="selftest.html">Go to Self Test Page</a>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
